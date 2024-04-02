@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:900|Raleway:500,700");
+
+html, body {
+  height: 100%;
+}
+
+body{
+  background-color: rgb(168, 63, 63);
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  padding: 10px 20px 12px 20px;
+  margin: 0px;
+  color: #fcba63;
+}
+
+.subtitle {
+  
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 20px;
+  margin: 0px;
+  color: #fcba63;
+
+}
+
+p {
+  padding: 6px 20px 6px 20px;
+  margin: 0px;
+}
+
+.sticker {
+  background-color: #fcba63;
+  color: #850825;
+  border-radius: 50%;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  padding: 0;
+  margin: 0;
+  line-height: 100px;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.title{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+}
+.container{
+  
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap:200px;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.text{
+  text-align: center;
+  font-size: 2rem;
+  gap: 2rem; 
+  font-weight: 700;
+
+}
+
+.img{
+  object-fit: cover;
+  width: 550px;
+  height: 550px;
+}
+
+
+
+
+
+.navigation{
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  width: 100%;
+  height: 40px;
+  background-color: rgb(203, 58, 58);
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
+  
+}
+
+a{
+  text-decoration: none;
+  font-weight: normal;
+  color: white;
+  
+
+}
+.footer{
+  background-color: rgb(246, 81, 81);
+  height: 40px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.container-table{
+  width: 30%;
+  height: 400px;
+}
+
+.title-table{
+  color: rgb(168, 63, 63);
+  background-color: white;
+  width: 100%;
+  padding: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+
+}
+.table{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+ 
+}
+
+.td{
+  padding: 8px;
+}
+
+.tr:nth-child(even) {
+  background-color: #dddddd;
+}
