@@ -6,7 +6,7 @@
     //Creating properties
     public int    $number;
     public string $type;
-    public float  $balance;
+    protected float  $balance;
     public array  $accounts = [];
    
     //Creating constructor
@@ -35,15 +35,31 @@
         return date('Y-m-d');
     }
 
+    // Getters and Setters 
 
-    // Creating objects
+    
+   public function getBalance() :float {
+         return $this->balance;
+   }
+
+   public function setBalance(float $balance): float {
+        
+        return $this->balance = $balance;
+   }
+   
    
   }
   
+   // Creating objects
   $accounts = [
     ( $alkapon_account = new Account( 1234124, 'Checking', 1000.0) ),
     ( $bolillo_account = new Account(124213421, 'Saving', 5000.0) ) 
   ];
+
+    $diego_account = new Account( 1234124, 'Checking', 1000.0);
+   
+  
+  
   
   
 ?>
@@ -77,7 +93,7 @@
                 
                 $number = $value->number;
                 $type = $value->type;
-                $balance = $value->balance;
+                $balance = $value->getBalance();
                 $createdAt = $value->createdAt();
 
                 echo '<div class="show-accounts">';
@@ -89,8 +105,16 @@
                 
             }
          ?>
-         
-         
+         <p> <?=  $diego_account->getBalance() ?></p>
+         <hr class="line">
+        
+         <div class="show-accounts">
+                 <p> previous balance  </p>
+                 <p> <?=  $diego_account->getBalance(); ?></p>
+                 <p> new balance  </p> 
+                 <p> <?= $diego_account->setBalance(250); ?> </p> 
+        </div>
+
     </div>
 
     

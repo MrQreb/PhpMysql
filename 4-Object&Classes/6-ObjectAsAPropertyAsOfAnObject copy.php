@@ -1,18 +1,19 @@
 <?php 
 
   declare( strict_types = 1);
+
   class Account{
 
     //Creating properties
-    public int    $number;
-    public string $type;
-    public float  $balance;
-    public array  $accounts = [];
+    public    object  $numbers;
+    public    string $type;
+    protected float  $balance;
+    public    array  $accounts = [];
    
     //Creating constructor
-    public function __construct( int $number, string $type, float $balance = 0.0)
+    public function __construct( object $numbers, string $type, float $balance = 0.0)
     {
-        $this-> number  = $number;
+        $this-> numbers  = $numbers;
         $this-> type  = $type;
         $this-> balance  = $balance;
         $this-> accounts []= $this;
@@ -35,15 +36,37 @@
         return date('Y-m-d');
     }
 
+    // Getters and Setters 
 
-    // Creating objects
+    
+   public function getBalance() :float {
+         return $this->balance;
+   }
+
+   public function setBalance(float $balance): float {
+        
+        return $this->balance = $balance;
+   }
+   
    
   }
-  
-  $accounts = [
-    ( $alkapon_account = new Account( 1234124, 'Checking', 1000.0) ),
-    ( $bolillo_account = new Account(124213421, 'Saving', 5000.0) ) 
-  ];
+
+  class AccountNumber {
+    
+    public int $accountNumber;
+    public int $routingNumber;
+
+    public function __construct( int $accountNumber, int $routingNumber)
+    {
+        $this->accountNumber = $accountNumber;
+        $this->routingNumber = $routingNumber;
+    }
+  }
+
+ $numbers = new AccountNumber( 123412321,123124);
+
+ //Assign a property numbers of an object Account Number
+ $account = new Account( $numbers, 'saving', 1000);
   
   
 ?>
@@ -72,25 +95,18 @@
             
          </div>
          <hr class="line">
-         <?php 
-            foreach( $accounts as $account => $value){
-                
-                $number = $value->number;
-                $type = $value->type;
-                $balance = $value->balance;
-                $createdAt = $value->createdAt();
+         <div class="show-accounts">
+            <!-- Access property a object of an object -->
+                 <p>Account number</p>
+                 <p><?= $account->numbers->accountNumber ?></p>
+                 <p>routing number</p>
+                 <p><?= $account->numbers->routingNumber ?></p>
+                 
+        </div>
+         <hr class="line">
+        
+         
 
-                echo '<div class="show-accounts">';
-                echo "<p> $number </p>";
-                echo "<p> $createdAt </p>";
-                echo "<p> $type </p>"; 
-                echo "<p> $balance </p>"; 
-                echo '</div>';
-                
-            }
-         ?>
-         
-         
     </div>
 
     
